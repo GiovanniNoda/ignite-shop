@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={roboto.className + " bg-gray-900 flex items-center justify-center h-screen"}  cz-shortcut-listen="true">
-        <h1 className="font-bold text-green-700 text-3xl">Ignite Shop</h1>
+        <h1 className="font-bold text-green-100 text-3xl">Ignite Shop</h1>
         {children}
       </body>
     </html>
