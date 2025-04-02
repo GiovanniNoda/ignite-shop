@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-mint-500: oklch(0.72 0.11 178);
+    --color-yellow-500: #c4c4c6;
+
+    --color-green-700: #f4f4ff;
+
+    --color-red-500: #000000;
   }
