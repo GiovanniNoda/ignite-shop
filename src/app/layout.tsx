@@ -21,8 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={roboto.className + " bg-gray-900 h-screen flex flex-col justify-center items-start"}  cz-shortcut-listen="true">
-       <header className="pt-8 w-full max-w-[1180px] mx-auto">
+      <body className={roboto.className + " bg-gray-900 h-screen pt-10 pb-16 flex flex-col justify-center items-start antialiased"}  cz-shortcut-listen="true">
+       <header className="w-full max-w-[1180px] mx-auto mb-8">
         <Image width={130} height={52} src={logo} alt="Logo Ignite Shop" />
        </header>
         {children}
