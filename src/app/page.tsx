@@ -1,7 +1,8 @@
 import "keen-slider/keen-slider.min.css"
 import { Carousel } from "@/components/carousel"
-import { getProductsList } from "@/api/getProductsList";
+import { getProductsList } from "@/api/getProductsList"
 
+export const revalidate = 60 * 60 * 6
 
 export default async function Home() {
   const products = await getProductsList();
