@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 
@@ -27,7 +28,7 @@ export function Carousel({ products }: CarouselProps) {
     return (
         <div className="keen-slider" ref={sliderRef}>
             {products.map(product => (
-                <a key={product.id} href="#" className="flex flex-col items-center justify-center bg-[linear-gradient(180deg,_#1EA483_0%,_#7465D4_100%)] relative cursor-pointer rounded-[8px] overflow-hidden h-full w-[696px] group keen-slider__slide">
+                <Link key={product.id} href={`/product/${product.id}`} className="flex flex-col items-center justify-center bg-[linear-gradient(180deg,_#1EA483_0%,_#7465D4_100%)] relative cursor-pointer rounded-[8px] overflow-hidden h-full w-[696px] group keen-slider__slide">
 
                     <Image width={520} height={480} src={product.imageUrl} alt={product.name} />
      
@@ -41,7 +42,7 @@ export function Carousel({ products }: CarouselProps) {
                             })}
                         </span>
                     </footer>
-                </a>
+                </Link>
             ))}
         </div>
     )

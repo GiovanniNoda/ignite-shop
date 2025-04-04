@@ -1,6 +1,6 @@
 import "keen-slider/keen-slider.min.css"
 import { Carousel } from "@/components/carousel"
-import { getProductsList } from "@/api/getProductsList"
+import { getProductsList } from "@/lib/stripe/getProductsList"
 
 export const revalidate = 60 * 60 * 6
 
