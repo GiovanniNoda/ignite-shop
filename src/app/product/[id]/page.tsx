@@ -1,3 +1,4 @@
+import { PurchaseButton } from "@/components/purchaseButton"
 import { getProduct } from "@/lib/stripe/getProduct"
 import Image from "next/image"
 
@@ -13,6 +14,7 @@ interface ProductProps {
     imageUrl: string
     price: number
     description: string | null
+    defaultPriceId: string
 }
 
 export default async function Product({ params }: ProductPageProps) {
@@ -34,10 +36,10 @@ export default async function Product({ params }: ProductPageProps) {
                         })}
                     </strong>
 
-                    <p className="text-gray-200 text-[18px] font-normal">{product.description}</p>
+                    <p className="text-gray-200 text-[18px] font-normal">{product.description ?? "Not has description"}</p>
                 </div>
 
-                <button className="w-full max-w-[520px] bg-green-300 p-5 rounded-[8px] text-white text-[18px] font-bold cursor-pointer hover:opacity-70 transition hover:duration-200">Comprar agora</button>
+                <PurchaseButton priceId={product.defaultPriceId} />
             </div>
         </main>
     )
