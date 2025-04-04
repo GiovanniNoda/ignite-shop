@@ -35,10 +35,12 @@ export function PurchaseButton({ priceId }: PurchaseButtonProps) {
     return (
         <button
             onClick={handleBuy}
-            className="w-full max-w-[520px] bg-green-300 p-5 rounded-[8px] text-white text-[18px] font-bold cursor-pointer hover:opacity-70 transition hover:duration-200"
+            className={`w-full max-w-[520px] p-5 rounded-[8px] text-white text-[18px] font-bold bg-green-300  transition hover:duration-200
+                ${isLoading ? "opacity-70 cursor-not-allowed" : "hover:opacity-70 cursor-pointer"}
+            `}
             disabled={isLoading}
         >
             {isLoading ? "Processando..." : "Comprar agora"}
         </button>
-    );
+    )
 }

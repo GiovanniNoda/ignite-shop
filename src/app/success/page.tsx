@@ -30,7 +30,7 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
                 <Image src={orderData.product_image} alt={orderData.product_name} width={114} height={106} />
            </div>
 
-           <p className="text-gray-200 font-normal text-2xl mb-20">Uhuul <strong className="text-gray-200 font-bold text-2xl">{orderData.customer_name}</strong>, sua <strong className="text-gray-200 font-bold text-2xl">{orderData.product_name}</strong> já está a caminho da sua casa.</p>
+           <p className="text-gray-200 font-normal text-2xl mb-20">Uhuul <strong className="text-gray-200 font-bold text-2xl">{orderData.customer_name.split(" ")[0]}</strong>, sua <strong className="text-gray-200 font-bold text-2xl">{orderData.product_name}</strong> já está a caminho da sua casa.</p>
 
            <Link href={'/'} className="text-green-300 text-xl font-bold">Voltar ao catálogo</Link>
         </main>
