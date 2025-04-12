@@ -48,7 +48,7 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
     const orderData: OrderData = await response.json()
 
     return (
-        <main className="flex flex-col items-center justify-center h-screen w-full max-w-[590px] m-auto">
+        <main className="flex flex-col items-center justify-center h-[656px] w-full max-w-[590px] m-auto">
            <h3 className="text-gray-100 font-bold text-[32px] mb-16">Purchase successful!</h3>
 
            <div className="w-[127px] h-[145px] flex items-center justify-center bg-[linear-gradient(180deg,_#1EA483_0%,_#7465D4_100%)] rounded-[8px] mb-8">

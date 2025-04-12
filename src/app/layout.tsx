@@ -17,12 +17,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className + " bg-gray-900 h-screen pt-10 pb-16 flex flex-col justify-center items-start antialiased"}  cz-shortcut-listen="true">
-       <header className="w-full max-w-[1180px] mx-auto mb-8">
+      <body className={roboto.className + " bg-gray-900 h-full pt-10 pb-16 flex flex-col justify-center items-start antialiased"}  cz-shortcut-listen="true">
+       <header className="lg:w-full lg:max-w-[1180px] lg:mx-auto lg:mb-8 ml-6 mb-9">
         <Image width={130} height={52} src={logo} alt="Logo Ignite Shop" />
        </header>
         {children}

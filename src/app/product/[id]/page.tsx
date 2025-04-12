@@ -31,7 +31,7 @@ export default async function Product({ params }: ProductPageProps) {
     const product: ProductProps = await getProduct(params.id)
 
     return (
-        <main className="w-full max-w-[1180px] min-h-[656px] flex items-center justify-between m-auto">
+        <main className="w-full max-w-[1180px] h-[656px] flex items-center justify-between m-auto">
             <div className="h-full w-full max-w-[576px] flex items-center justify-center bg-[linear-gradient(180deg,_#1EA483_0%,_#7465D4_100%)] rounded-[8px]">
                 <Image width={520} height={480} src={product.imageUrl} alt={product.name} />
             </div>

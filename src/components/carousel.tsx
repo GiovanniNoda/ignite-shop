@@ -26,7 +26,7 @@ export function Carousel({ products }: CarouselProps) {
       })
 
     return (
-        <div className="keen-slider" ref={sliderRef}>
+        <div className="keen-slider h-[656px]" ref={sliderRef}>
             {products.map(product => (
                 <Link key={product.id} href={`/product/${product.id}`} className="flex flex-col items-center justify-center bg-[linear-gradient(180deg,_#1EA483_0%,_#7465D4_100%)] relative cursor-pointer rounded-[8px] overflow-hidden h-full w-[696px] group keen-slider__slide">
 
