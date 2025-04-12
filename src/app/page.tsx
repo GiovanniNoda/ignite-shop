@@ -14,12 +14,12 @@ export default async function Home() {
       className="w-full min-h-[656px] flex-1 ml-auto overflow-x-auto"
       style={{ maxWidth: "calc(100vw - ((100vw - 1180px) / 2))" }}
     >
-      {/* Mostra o carrossel apenas em telas >= 1024px */}
+      {/* >= 1024px */}
       <div className="h-full hidden lg:flex">
         <Carousel products={products} />
       </div>
 
-      {/* Mostra os produtos em coluna para telas menores que 1024px */}
+      {/* <1024px */}
       <div className="flex flex-col gap-8 items-center justify-center px-4 lg:hidden">
         {products.map((product) => (
           <Link
