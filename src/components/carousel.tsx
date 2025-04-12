@@ -6,10 +6,10 @@ import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 
 interface Product {
-    id: string;
-    name: string;
-    imageUrl: string;
-    price: number;
+    id: string
+    name: string
+    imageUrl: string
+    price: number
 }
 
 interface CarouselProps {

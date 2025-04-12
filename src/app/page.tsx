@@ -5,7 +5,7 @@ import { getProductsList } from "@/lib/stripe/getProductsList"
 export const revalidate = 60 * 60 * 6
 
 export default async function Home() {
-  const products = await getProductsList();
+  const products = await getProductsList()
 
   return (
    <main className="flex w-full min-h-[656px] ml-auto overflow-x-auto" style={{ maxWidth: "calc(100vw - ((100vw - 1180px) / 2))" }}>
