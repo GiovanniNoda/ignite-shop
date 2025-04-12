@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   
     return {
       title: `${product.name} | Ignite Shop`,
-      description: product.description ?? "Confira esse produto incrível em nossa loja!",
+      description: product.description ?? "Not has description.",
     }
   }
 
