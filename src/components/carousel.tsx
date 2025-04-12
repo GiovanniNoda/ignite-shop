@@ -33,7 +33,7 @@ export function Carousel({ products }: CarouselProps) {
                     <Image width={520} height={480} src={product.imageUrl} alt={product.name} />
      
                     <footer className="flex justify-between items-center absolute bg-[rgba(32,_32,_36,_0.90)] bottom-2 left-2 right-2 p-8 rounded-md font-bold translate-y-full opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
-                        
+
                         <strong className="text-xl text-gray-100">{product.name}</strong>
 
                         <span className="text-2xl font-bold text-green-100">
