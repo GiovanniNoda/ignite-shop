@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -7,6 +8,30 @@ interface OrderData {
     product_name: string
     product_image: string
 }
+
+export async function generateMetadata({ searchParams }: { searchParams: { session_id?: string } }): Promise<Metadata> {
+    const sessionId = searchParams.session_id
+  
+    if (!sessionId) {
+      return {
+        title: "Purchase Not Found",
+      }
+    }
+  
+    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/checkout/session?session_id=${sessionId}`)
+    if (!response.ok) {
+      return {
+        title: "Purchase Not Found",
+      }
+    }
+  
+    const orderData: OrderData = await response.json()
+  
+    return {
+      title: `Success: ${orderData.product_name} | Ignite Shop`,
+      description: `Thank you for your purchase, ${orderData.customer_name.split(" ")[0]}!`,
+    }
+  }
 
 export default async function SuccessPage({ searchParams }: { searchParams: { session_id?: string } }) {
     const sessionId = searchParams.session_id
