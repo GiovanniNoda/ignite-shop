@@ -4,7 +4,7 @@ import { getProductsList } from "@/lib/stripe/getProductsList"
 import Image from "next/image"
 import Link from "next/link"
 
-export const revalidate = 60 * 60 * 6
+export const revalidate = 21600
 
 export default async function Home() {
   const products = await getProductsList()
