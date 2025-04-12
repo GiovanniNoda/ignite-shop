@@ -48,16 +48,16 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
     const orderData: OrderData = await response.json()
 
     return (
-        <main className="flex flex-col items-center justify-center h-[656px] w-full max-w-[590px] m-auto">
-           <h3 className="text-gray-100 font-bold text-[32px] mb-16">Purchase successful!</h3>
+        <main className="mt-[-64px] flex flex-col items-center justify-center h-[656px] w-full max-w-[590px] m-auto lg:mt-0">
+           <h3 className="text-gray-100 text-2xl font-bold mb-16 md:text-[32px]">Purchase successful!</h3>
 
            <div className="w-[127px] h-[145px] flex items-center justify-center bg-[linear-gradient(180deg,_#1EA483_0%,_#7465D4_100%)] rounded-[8px] mb-8">
                 <Image src={orderData.product_image} alt={orderData.product_name} width={114} height={106} />
            </div>
 
-           <p className="text-gray-200 font-normal text-2xl mb-20">Congratulations <strong className="text-gray-200 font-bold text-2xl">{orderData.customer_name.split(" ")[0]}</strong>, your <strong className="text-gray-200 font-bold text-2xl">{orderData.product_name}</strong> is already on the way to your house.</p>
+           <p className="text-gray-200 font-normal text-[16px] mb-10 px-6 text-center md:mb-20 md:text-2xl">Congratulations <strong className="text-gray-200 font-bold text-[16px] md:text-2xl">{orderData.customer_name.split(" ")[0]}</strong>, your <strong className="text-gray-200 font-bold text-[16px] md:text-2xl">{orderData.product_name}</strong> is already on the way to your house.</p>
 
-           <Link href={'/'} className="text-green-300 text-xl font-bold">Return to catalog</Link>
+           <Link href={'/'} className="text-green-300 text-[16px] font-bold md:text-xl">Return to catalog</Link>
         </main>
     );
 }
