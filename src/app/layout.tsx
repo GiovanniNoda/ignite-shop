@@ -11,7 +11,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Ignite Shop",
-  description: "Loja virtual de camisetas da Rocketseat",
+  description: "Rocketseat T-shirt store",
 }
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body className={roboto.className + " bg-gray-900 h-screen pt-10 pb-16 flex flex-col justify-center items-start antialiased"}  cz-shortcut-listen="true">
        <header className="w-full max-w-[1180px] mx-auto mb-8">
         <Image width={130} height={52} src={logo} alt="Logo Ignite Shop" />

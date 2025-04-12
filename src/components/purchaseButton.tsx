@@ -2,33 +2,33 @@
 import { useState } from "react"
 
 interface PurchaseButtonProps {
-    priceId: string;
+    priceId: string
 }
 
 export function PurchaseButton({ priceId }: PurchaseButtonProps) {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
 
     async function handleBuy() {
-        setIsLoading(true);
+        setIsLoading(true)
 
         try {
             const response = await fetch("/api/checkout", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ priceId }),
-            });
+            })
 
             if (!response.ok) {
-                throw new Error("Erro ao iniciar checkout");
+                throw new Error("Error creating checkout session")
             }
 
-            const { checkoutUrl } = await response.json();
-            window.location.href = checkoutUrl; // Redireciona para Stripe
+            const { checkoutUrl } = await response.json()
+            window.location.href = checkoutUrl // Redirect to Stripe
         } catch (error) {
-            console.error(error);
-            alert("Falha ao redirecionar para o pagamento!");
+            console.error(error)
+            alert("Failed to redirect to payment!")
         } finally {
-            setIsLoading(false);
+            setIsLoading(false)
         }
     }
 
@@ -40,7 +40,7 @@ export function PurchaseButton({ priceId }: PurchaseButtonProps) {
             `}
             disabled={isLoading}
         >
-            {isLoading ? "Processando..." : "Comprar agora"}
+            {isLoading ? "Processing..." : "Buy now"}
         </button>
     )
 }

@@ -1,5 +1,6 @@
 import { PurchaseButton } from "@/components/purchaseButton"
 import { getProduct } from "@/lib/stripe/getProduct"
+import { Metadata } from "next"
 import Image from "next/image"
 
 interface ProductPageProps {
@@ -16,6 +17,15 @@ interface ProductProps {
     description: string | null
     defaultPriceId: string
 }
+
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+    const product: ProductProps = await getProduct(params.id)
+  
+    return {
+      title: `${product.name} | Ignite Shop`,
+      description: product.description ?? "Confira esse produto incrível em nossa loja!",
+    }
+  }
 
 export default async function Product({ params }: ProductPageProps) {
     const product: ProductProps = await getProduct(params.id)
