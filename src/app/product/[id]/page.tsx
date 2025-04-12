@@ -31,22 +31,22 @@ export default async function Product({ params }: ProductPageProps) {
     const product: ProductProps = await getProduct(params.id)
 
     return (
-        <main className="w-full max-w-[1180px] h-[656px] flex items-center justify-between m-auto">
-            <div className="h-full w-full max-w-[576px] flex items-center justify-center bg-[linear-gradient(180deg,_#1EA483_0%,_#7465D4_100%)] rounded-[8px]">
+        <main className="w-full flex flex-col items-center justify-between m-auto lg:max-w-[1180px] lg:h-[656px] lg:flex-row lg:justify-between">
+            <div className="h-full w-full max-w-[280px] flex items-center justify-center bg-[linear-gradient(180deg,_#1EA483_0%,_#7465D4_100%)] rounded-[8px] mb-10 md:max-w-[576px] lg:mb-0">
                 <Image width={520} height={480} src={product.imageUrl} alt={product.name} />
             </div>
 
-            <div className="w-full max-w-[520px] h-full flex flex-col items-center justify-between">
-                <div className="flex flex-col">
-                    <h2 className="text-gray-200 font-bold text-[32px] mb-4">{product.name}</h2>
+            <div className="w-full h-full max-w-[280px] flex flex-col items-center justify-between md:max-w-[520px]">
+                <div className="flex flex-col justify-center items-center mb-12 lg:mb-0 lg:items-start">
+                    <h2 className="text-gray-200 text-2xl font-bold mb-4 md:text-[32px]">{product.name}</h2>
 
-                    <strong className="text-green-100 font-normal text-[32px] mb-10">{product.price.toLocaleString("pt-BR", { 
+                    <strong className="text-green-100 text-2xl font-normal mb-10 md:text-[32px]">{product.price.toLocaleString("pt-BR", { 
                         style: "currency", 
                         currency: "BRL", 
                         })}
                     </strong>
 
-                    <p className="text-gray-200 text-[18px] font-normal">{product.description ?? "Not has description"}</p>
+                    <p className="text-gray-200 text-sm font-normal text-center md:text-[18px] lg:text-left">{product.description ?? "Not has description"}</p>
                 </div>
 
                 <PurchaseButton priceId={product.defaultPriceId} />
