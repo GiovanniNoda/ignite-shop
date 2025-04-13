@@ -59,5 +59,5 @@ export default async function SuccessPage({ searchParams }: { searchParams: { se
 
            <Link href={'/'} className="text-green-300 text-[16px] font-bold md:text-xl">Return to catalog</Link>
         </main>
-    );
+    )
 }
